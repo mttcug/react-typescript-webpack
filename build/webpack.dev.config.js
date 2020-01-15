@@ -1,35 +1,30 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
-module.exports = {
-    mode: "production",
-    entry: {
-        main: path.resolve(__dirname, './main.tsx')
-    },
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: '[name].[hash].js'
-    },
-    resolve: {
-        extensions: ['.tsx', '.jsx', '.js', '.html'],
-        alias: {
-            '@': './src'
-        }
-    },
+const path = require('path')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.base.config')
+const styleLoader = require('./utils')
+
+const config = merge(baseConfig, {
+    mode: "development",
     module: {
-        rules: [
-            {
-                test: /\.(t|j)sx?$/,
-                use: ['babel-loader', 'tslint-loader']
-            }
-        ]
+        rules: styleLoader.styleLoaders({
+            sourceMap: false,
+            usePostCSS: true
+        })
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            filename: './index.html',
-            template: './index.html'
-        }),
-        new CleanWebpackPlugin()
-    ]
-}
+    devServer: {
+        contentBase: path.resolve(__dirname, '../dist'),
+        hot: true,
+        open: true,
+        port: '8080',
+        compress: false,
+        historyApiFallback: {
+            rewrites: [
+                { from: /^\/$/, to: '/dist/index.html' }
+            ]
+          }
+    }
+
+})
+
+module.exports = config
