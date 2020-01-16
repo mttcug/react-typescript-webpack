@@ -1,7 +1,7 @@
 {
     "presets": [
         // 编译js -> es5
-        "@babel/preset-env",
+        ["@babel/preset-env",{"modules": false}],
         // 编译react -> js
         "@babel/preset-react",
         // 编译ts -> js
