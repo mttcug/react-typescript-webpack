@@ -6,6 +6,7 @@ const styleLoader = require('./utils')
 
 const config = merge(baseConfig, {
     mode: "development",
+    devtool: 'devtool',
     module: {
         rules: styleLoader.styleLoaders({
             sourceMap: false,
@@ -16,15 +17,14 @@ const config = merge(baseConfig, {
         contentBase: path.resolve(__dirname, '../dist'),
         hot: true,
         open: true,
-        port: '8080',
+        port: '9999',
         compress: false,
         historyApiFallback: {
             rewrites: [
                 { from: /^\/$/, to: '/dist/index.html' }
             ]
-          }
+        }
     }
-
 })
 
 module.exports = config
