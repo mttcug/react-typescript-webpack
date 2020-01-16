@@ -16,6 +16,14 @@
       "lib": [
         "es2016",
         "dom"
-      ]
+      ],
+      "paths": {
+        "@asset/*": ["asset/*"],
+        "@component/*": ["component/*"],
+        "@constant/*": ["constant/*"],
+        "@model/*": ["model/*"],
+        "@page/*": ["page/*"],
+        "@utils/*": ["utils/*"]
+      }
     }
   }
