@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Layout, Menu, Icon } from 'antd'
 const { Header, Sider, Content } = Layout;
 
-const Home = () => {
+const Home: React.SFC = () => {
     return (
         <Layout>
         <Sider trigger={null} collapsible>
