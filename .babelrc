@@ -1,7 +1,10 @@
 {
     "presets": [
+        // 编译js -> es5
         "@babel/preset-env",
+        // 编译react -> js
         "@babel/preset-react",
+        // 编译ts -> js
         "@babel/preset-typescript"
     ],
     "plugins": [
