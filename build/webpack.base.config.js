@@ -1,3 +1,4 @@
+/*global require, module, __dirname*/
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
@@ -10,20 +11,21 @@ module.exports = {
         filename: '[name].[hash].js'
     },
     resolve: {
-        extensions: ['.tsx', '.jsx', '.js', '.html'],
+        extensions: ['.tsx', 'ts', '.jsx', '.js', '.html'],
         alias: {
             '@': './src',
             '@page': './src/page',
             '@router': './src/router',
             '@component': './src/component',
-            '@static': './src/static'
+            '@static': './src/static',
+            '@share': './src/share'
         }
     },
     module: {
         rules: [
             {
                 test: /\.(t|j)sx?$/,
-                use: ['babel-loader', 'tslint-loader']
+                use: ['babel-loader', 'eslint-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
