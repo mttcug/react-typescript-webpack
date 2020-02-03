@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Layout, Menu, Icon } from 'antd'
 const { Header, Sider, Content } = Layout
 
-const Home: React.SFC = () => {
+const Error: React.SFC = () => {
   return (
     <Layout>
       <Sider trigger={null} collapsible>
@@ -45,4 +45,4 @@ const Home: React.SFC = () => {
   )
 }
 
-export default Home
+export default Error

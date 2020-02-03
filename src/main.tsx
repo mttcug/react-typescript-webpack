@@ -6,9 +6,9 @@ import * as ReactDOM from 'react-dom'
 import App from './page/App'
 import 'antd/dist/antd.css'
 
-const wrapper = document.getElementById("app")
+const wrapper = document.getElementById('app')
 
 ReactDOM.render(
-    <App />,
-    wrapper
+  <App />,
+  wrapper
 )
