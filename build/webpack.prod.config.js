@@ -4,8 +4,6 @@ const baseConfig = require('./webpack.base.config')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const styleLoader = require('./utils')
 
-const devMode = process.env.NODE_ENV !== 'production';
-
 const config = merge(baseConfig, {
     mode: "production",
     module: {
@@ -35,8 +33,8 @@ const config = merge(baseConfig, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: devMode ? '[name].css' : '[name].[hash].css',
-          chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+          filename: '[name].[hash].css',
+          chunkFilename: '[id].[hash].css',
         })
       ]
 
