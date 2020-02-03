@@ -11,7 +11,7 @@ module.exports = {
         filename: '[name].[hash].js'
     },
     resolve: {
-        extensions: ['.tsx', 'ts', '.jsx', '.js', '.html'],
+        extensions: ['.tsx', 'ts', '.jsx', '.js', '.scss', '.html'],
         alias: {
             '@': './src',
             '@page': './src/page',
