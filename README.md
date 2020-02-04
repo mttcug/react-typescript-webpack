@@ -35,7 +35,8 @@
 ```
 
 ## 2) ts编译器的问题
-#### babel和typescript是两个不同的编译器，babel把es678编译成es5,typescript是吧ts编译成js，webpack需要配置ts-loader，之后又出现了awesome-typescript-loader, 在线typescript也可以使用babel编译typescript了需要在babel中配置preset/babel-typescript
+#### babel和typescript是两个不同的编译器，现在可使用一个编译器即可。
+>babel把es678编译成es5，typescript是吧ts编译成js，webpack需要配置ts-loader，之后又出现了awesome-typescript-loader, 在线typescript也可以使用babel编译typescript了需要在babel中配置preset/babel-typescript
 `.babelrc`
 ```javascript
   {
