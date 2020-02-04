@@ -37,4 +37,18 @@
           "@utils/*": ["utils/*"]
         }
 ```
+## tsconfig中添加了path依然无效，检查webpack.config.js中配置，需要使用绝对路径path.resolve
+```javascript
+  resolve: {
+          extensions: ['.tsx', 'ts', '.jsx', '.js'],
+          alias: {
+              '@': path.resolve(__dirname, '../src'),
+              '@page': path.resolve(__dirname, '../src/page'),
+              '@router': path.resolve(__dirname, '../src/router'),
+              '@component': path.resolve(__dirname, '../src/component'),
+              '@static': path.resolve(__dirname, '../src/static'),
+              '@share': path.resolve(__dirname, '../src/share')
+          }
+      }
+```
 
