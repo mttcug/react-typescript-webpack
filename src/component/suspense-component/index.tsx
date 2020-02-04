@@ -11,11 +11,9 @@ const SuspenseCom = (name: string): SFC => {
 
   // 返回一个suspense的函数组件
   return () => (
-    <div>
-      <Suspense fallback={ loading }>
-        <Component />
-      </Suspense>
-    </div>
+    <Suspense fallback={ loading }>
+      <Component />
+    </Suspense>
   )
 }
 
