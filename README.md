@@ -3,6 +3,7 @@
 ## scss
 ## eslint + prettier
 
+
 `.babelrc`
 ```javascript
   {
@@ -21,9 +22,19 @@
       ]
   }
 ```
-(```)
-    function fun(){
-         echo "这是一句非常牛逼的代码";
-    }
-    fun();
-(```)
+
+# 编程过程中所遇到的问题
+## webpack resolve.alias 无效的问题
+>>> 因为使用了ts,需要在tsconfig中配置path与之对应才能生效
+```javascript
+  "baseUrl": "src",
+  "paths": {
+          "@asset/*": ["asset/*"],
+          "@component/*": ["component/*"],
+          "@constant/*": ["constant/*"],
+          "@model/*": ["model/*"],
+          "@page/*": ["page/*"],
+          "@utils/*": ["utils/*"]
+        }
+```
+
