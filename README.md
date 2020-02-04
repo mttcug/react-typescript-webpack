@@ -4,3 +4,8 @@
 ## eslint + prettier
 
 `javascript`
+(```)
+  function test () {
+    console.log()
+  }
+(```)
