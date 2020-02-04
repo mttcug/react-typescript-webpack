@@ -3,10 +3,22 @@
 ## scss
 ## eslint + prettier
 
-`javascript`
+`.babelrc`
 ```javascript
-  function test () {
-    console.log()
+  {
+      "presets": [
+          // 编译js -> es5
+          ["@babel/preset-env",{"modules": false}],
+          // 编译react -> js
+          "@babel/preset-react",
+          // 编译ts -> js
+          "@babel/preset-typescript"
+      ],
+      "plugins": [
+          "@babel/plugin-transform-runtime",
+          // react热更新
+          "react-hot-loader/babel"
+      ]
   }
 ```
 (```)
