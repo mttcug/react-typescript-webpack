@@ -1,7 +1,8 @@
 # 项目所用到的技术栈
-## react webpack typescript
-## scss
-## eslint + prettier
+##### react webpack typescript
+##### scss
+##### react-hot-loader
+##### eslint + prettier
 
 
 
@@ -55,4 +56,7 @@
       ]
   }
 ```
+
+## 3)热加载问题
+#### 之前使用的热加载HotModuleReplacementPlugin来实现，现在react项目使用了另一个中方式react-hot-loader，感兴趣的同学可以了解一下
 
