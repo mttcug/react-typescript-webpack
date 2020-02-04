@@ -13,12 +13,12 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', 'ts', '.jsx', '.js', '.scss', '.html'],
         alias: {
-            '@': './src',
-            '@page': './src/page',
-            '@router': './src/router',
-            '@component': './src/component',
-            '@static': './src/static',
-            '@share': './src/share'
+            '@': path.resolve(__dirname, '../src'),
+            '@page': path.resolve(__dirname, '../src/page'),
+            '@router': path.resolve(__dirname, '../src/router'),
+            '@component': path.resolve(__dirname, '../src/component'),
+            '@static': path.resolve(__dirname, '../src/static'),
+            '@share': path.resolve(__dirname, '../src/share')
         }
     },
     module: {
