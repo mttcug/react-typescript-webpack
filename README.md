@@ -2,3 +2,5 @@
 ## react webpack typescript
 ## scss
 ## eslint + prettier
+
+`javascript`
