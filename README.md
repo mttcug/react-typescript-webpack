@@ -4,27 +4,9 @@
 ## eslint + prettier
 
 
-`.babelrc`
-```javascript
-  {
-      "presets": [
-          // 编译js -> es5
-          ["@babel/preset-env",{"modules": false}],
-          // 编译react -> js
-          "@babel/preset-react",
-          // 编译ts -> js
-          "@babel/preset-typescript"
-      ],
-      "plugins": [
-          "@babel/plugin-transform-runtime",
-          // react热更新
-          "react-hot-loader/babel"
-      ]
-  }
-```
 
 # 编程过程中所遇到的问题
-## webpack resolve.alias 无效的问题
+## 1)webpack resolve.alias 无效的问题
 > 因为使用了ts,需要在tsconfig中配置path与之对应才能生效
 ```javascript
   "baseUrl": "src",
@@ -50,5 +32,26 @@
               '@share': path.resolve(__dirname, '../src/share')
           }
       }
+```
+
+## 2) ts编译器的问题
+#### babel和typescript是两个不同的编译器，babel把es678编译成es5,typescript是吧ts编译成js，webpack需要配置ts-loader，之后又出现了awesome-typescript-loader, 在线typescript也可以使用babel编译typescript了需要在babel中配置preset/babel-typescript
+`.babelrc`
+```javascript
+  {
+      "presets": [
+          // 编译js -> es5
+          ["@babel/preset-env",{"modules": false}],
+          // 编译react -> js
+          "@babel/preset-react",
+          // 编译ts -> js
+          "@babel/preset-typescript"
+      ],
+      "plugins": [
+          "@babel/plugin-transform-runtime",
+          // react热更新
+          "react-hot-loader/babel"
+      ]
+  }
 ```
 
