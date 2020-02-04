@@ -25,7 +25,7 @@
 
 # 编程过程中所遇到的问题
 ## webpack resolve.alias 无效的问题
->>> 因为使用了ts,需要在tsconfig中配置path与之对应才能生效
+> 因为使用了ts,需要在tsconfig中配置path与之对应才能生效
 ```javascript
   "baseUrl": "src",
   "paths": {
@@ -37,7 +37,7 @@
           "@utils/*": ["utils/*"]
         }
 ```
-## tsconfig中添加了path依然无效，检查webpack.config.js中配置，需要使用绝对路径path.resolve
+> tsconfig中添加了path依然无效，检查webpack.config.js中配置，需要使用绝对路径path.resolve
 ```javascript
   resolve: {
           extensions: ['.tsx', 'ts', '.jsx', '.js'],
