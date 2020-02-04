@@ -5,7 +5,9 @@ import './App.scss'
 
 import SuspenseCom from '@component/suspense-component'
 
+// Home页面
 const Home = SuspenseCom('Home')
+// error页面
 const Errors = SuspenseCom('Errors')
 
 
