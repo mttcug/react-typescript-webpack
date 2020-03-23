@@ -1,20 +1,24 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import { LayoutOutlined, RocketOutlined } from '@ant-design/icons'
 const { Sider } = Layout
+import { IHomeProps } from '@type/home'
 
-const SiderComponent: React.SFC = () => {
+
+const SiderComponent: React.SFC<IHomeProps> = (props: IHomeProps) => {
 
   const choose = (id) => {
-    console.log('choose', id)
+    console.log('choose', id, props)
+    props.choosePot()
   }
 
   return (
     <Sider trigger={null} collapsible>
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['2']} onClick={ choose }>
-        <SubMenu key="1"
+      <Menu theme="dark" mode="inline" defaultOpenKeys={['frontend']} defaultSelectedKeys={['Javascript']} onClick={ choose }>
+        <SubMenu key="frontend"
           title={
             <span>
               <LayoutOutlined />
@@ -22,17 +26,17 @@ const SiderComponent: React.SFC = () => {
             </span>
           }
         >
-          <Menu.Item key="2">
-            javascript
+          <Menu.Item key="Javascript">
+            <Link to="/frontend/Javascript">Javascript</Link>
           </Menu.Item>
-          <Menu.Item key="3">
-            React
+          <Menu.Item key="React">
+            <Link to="/frontend/React">React</Link>
           </Menu.Item>
-          <Menu.Item key="4">
-            Vue
+          <Menu.Item key="Vue">
+            <Link to="/frontend/Vue">Vue</Link>
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="5"
+        <SubMenu key="python"
           title={
             <span>
               <RocketOutlined />

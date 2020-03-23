@@ -23,7 +23,7 @@
         "@constant/*": ["constant/*"],
         "@model/*": ["model/*"],
         "@page/*": ["page/*"],
-        "@utils/*": ["utils/*"]
+        "@type/*": ["type/*"]
       }
     }
   }

@@ -18,7 +18,8 @@ module.exports = {
             '@router': path.resolve(__dirname, '../src/router'),
             '@component': path.resolve(__dirname, '../src/component'),
             '@static': path.resolve(__dirname, '../src/static'),
-            '@share': path.resolve(__dirname, '../src/share')
+            '@share': path.resolve(__dirname, '../src/share'),
+            '@type': path.resolve(__dirname, '../src/type')
         }
     },
     module: {
