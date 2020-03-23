@@ -11,15 +11,17 @@ import vueComponent from '@page/frontend/vue'
 
 const Home: React.SFC = () => {
 
+  const currentPage: string = ''
+
   const choosePot = (key) => {
-    console.log('1')
+    this.currentPage = key
   }
 
   return (
     <Layout>
       <SideComponent choosePot={ choosePot }/>
       <Layout>
-        <HeaderComponent />
+        <HeaderComponent page={ currentPage }/>
         <Content className='content'>
           <Switch>
             <Route path="/frontend/Javascript" exact component={ javascriptComponent }></Route>
