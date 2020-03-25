@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Layout, PageHeader } from 'antd'
 const { Header } = Layout
-import { IHomeProps } from '@type/home'
+import { IHeaderProps } from '@type/home'
 
-const HeaderComponent: React.SFC<IHomeProps> = (props: IHomeProps) => {
+const HeaderComponent: React.SFC<IHeaderProps> = (props: IHeaderProps) => {
   console.log('props:', props)
   return (
     <Header style={{ background: '#fff', padding: '0px 20px' }}>

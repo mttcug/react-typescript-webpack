@@ -10,6 +10,7 @@
     "plugins": [
         "@babel/plugin-transform-runtime",
         // react热更新
-        "react-hot-loader/babel"
+        "react-hot-loader/babel",
+        ["@babel/plugin-proposal-class-properties", { "loose": true }] 
     ]
 }

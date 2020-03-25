@@ -4,14 +4,14 @@ import { Layout, Menu } from 'antd'
 import SubMenu from 'antd/lib/menu/SubMenu'
 import { LayoutOutlined, RocketOutlined } from '@ant-design/icons'
 const { Sider } = Layout
-import { IHomeProps } from '@type/home'
+import { ISiderProps } from '@type/home'
 
 
-const SiderComponent: React.SFC<IHomeProps> = (props: IHomeProps) => {
+const SiderComponent: React.SFC<ISiderProps> = (props: ISiderProps) => {
 
-  const choose = (id) => {
-    console.log('choose', id, props)
-    props.choosePot()
+  const choose = (item) => {
+    console.log('choose', item, item.key, props)
+    props.choosePot(item.key)
   }
 
   return (
