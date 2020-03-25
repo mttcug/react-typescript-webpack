@@ -10,9 +10,13 @@ import { ISiderProps } from '@type/home'
 const SiderComponent: React.SFC<ISiderProps> = (props: ISiderProps) => {
 
   const choose = (item) => {
-    console.log('choose', item, item.key, props)
     props.choosePot(item.key)
   }
+  const frontLearn = [
+    { key: 'Javascript', path: '/frontend/Javascript' },
+    { key: 'React', path: '/frontend/React' },
+    { key: 'Vue', path: '/frontend/Vue' }
+  ]
 
   return (
     <Sider trigger={null} collapsible>
@@ -26,15 +30,15 @@ const SiderComponent: React.SFC<ISiderProps> = (props: ISiderProps) => {
             </span>
           }
         >
-          <Menu.Item key="Javascript">
-            <Link to="/frontend/Javascript">Javascript</Link>
-          </Menu.Item>
-          <Menu.Item key="React">
-            <Link to="/frontend/React">React</Link>
-          </Menu.Item>
-          <Menu.Item key="Vue">
-            <Link to="/frontend/Vue">Vue</Link>
-          </Menu.Item>
+          {
+            frontLearn.map(item => {
+              return (
+                <Menu.Item key={ item.key }>
+                  <Link to={ item.path }>{ item.key }</Link>
+                </Menu.Item>
+              )
+            })
+          }
         </SubMenu>
         <SubMenu key="python"
           title={
